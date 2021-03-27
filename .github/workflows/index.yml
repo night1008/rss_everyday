@@ -1,7 +1,7 @@
 name: RSS Everyday
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 */4 * * *'
 #env:
 #  TZ: Asia/Shanghai
 
@@ -16,4 +16,4 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v2
         - name: build
-          run: go run main.go --tg_bot=${{secrets.RSS_TG_BOT_TOKEN}} --tg_channel=${{secrets.RSS_TG_CHANNEL_ID}}
+          run: go run main.go --tg_bot=${{secrets.BOTTOKEN}} --tg_channel=${{secrets.CHANNELID}}

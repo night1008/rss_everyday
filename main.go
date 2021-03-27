@@ -4,10 +4,11 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
-	"github.com/mmcdole/gofeed"
 	"os"
 	"time"
+
+	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
+	"github.com/mmcdole/gofeed"
 )
 
 // 基础环境配置
@@ -52,7 +53,6 @@ func GetRssInfo() {
 	if err != nil {
 		panic(err)
 	}
-
 }
 
 // 根据时间筛选昨天一整天的文章
@@ -74,7 +74,7 @@ func GetPostInfo(rss RssInfo) []string {
 	fp := gofeed.NewParser()
 	feed, err := fp.ParseURL(rss.Url)
 	if err != nil {
-		fmt.Print(err.Error())
+		fmt.Println(err.Error())
 	} else {
 		for _, item := range feed.Items {
 			if item.PublishedParsed != nil && item.PublishedParsed.Unix() >= start && item.PublishedParsed.Unix() < end {
@@ -84,7 +84,6 @@ func GetPostInfo(rss RssInfo) []string {
 			}
 		}
 	}
-
 	return msg
 }
 
@@ -96,9 +95,11 @@ func PushPost(msg []string) {
 		panic(err)
 	}
 	for _, s := range msg {
-		_, _ = bot.Send(tgbotapi.NewMessage(*ChannelID, s))
+		_, err := bot.Send(tgbotapi.NewMessage(*ChannelID, s))
+		if err != nil {
+			fmt.Println(err.Error())
+		}
 	}
-
 }
 
 func main() {
