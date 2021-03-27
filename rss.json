@@ -3,6 +3,22 @@
     {
       "title": "阮一封的网络日志",
       "url": "http://feeds.feedburner.com/ruanyifeng"
+    },
+    {
+      "title": "云风的 BLOG",
+      "url": "https://blog.codingnow.com/atom.xml"
+    },
+    {
+      "title": "面向信仰编程",
+      "url": "https://draveness.me/feed.xml"
+    },
+    {
+      "title": "编程随想的博客",
+      "url": "https://feeds2.feedburner.com/programthink"
+    },
+    {
+      "title": "核电站",
+      "url": "https://0792z.blogspot.com/feeds/posts/default"
     }
   ]
 }
