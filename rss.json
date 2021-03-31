@@ -19,6 +19,14 @@
     {
       "title": "核电站",
       "url": "https://0792z.blogspot.com/feeds/posts/default"
+    },
+    {
+      "title": "核电站",
+      "url": "https://night1008.github.io/feed.xml"
+    },
+    {
+      "title": "Kubernetes – 生产级别的容器编排系统",
+      "url": "https://kubernetes.io/zh/feed.xml"
     }
   ]
 }

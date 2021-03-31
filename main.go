@@ -80,7 +80,6 @@ func GetPostInfo(rss RssInfo) []string {
 			if item.PublishedParsed != nil && item.PublishedParsed.Unix() >= start && item.PublishedParsed.Unix() < end {
 				msgItem := fmt.Sprintln(item.Title, item.Link)
 				msg = append(msg, msgItem)
-
 			}
 		}
 	}
